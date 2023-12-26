@@ -1,12 +1,11 @@
-import { Header } from "./components/header/Header"
-import { Container } from "./components/container/Container"
+import { Header } from "./Components/header/Header"
+import { Container } from "./Components/container/Container"
 
-
-export const App = ()=>{
+export const App = () => {
   return(
-    <div className="w-full h-full bg-[#121214]">
+    <div className="w-full h-full bg-[#121214] flex flex-col items-center">
       <Header/>
-      <Container />
+      <Container/>
     </div>
   )
 }

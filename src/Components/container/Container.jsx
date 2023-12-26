@@ -1,14 +1,13 @@
-import { Card } from "../card/Card";
-import { useState, useEffect } from "react";
 import { format } from 'date-fns';
+import { Card } from "../card/Card"
+import { useState, useEffect } from "react";
 import { FaSpinner } from "react-icons/fa6";
-
 
 export const Container = ()=>{
   const [quotes, setQuotes] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [limit, setLimit] = useState(10); // Inicialmente, busca 10 citações
+  const [limit, setLimit] = useState(10);
 
   const fetchQuotes = async () => {
     try {
@@ -52,9 +51,8 @@ export const Container = ()=>{
     return () => window.removeEventListener('scroll', handleScroll);
   });
 
-
   return(
-    <div className="relative sm:w-4/5 sm:p-8 lg:w-2/4 lg:left-1/4 my-8 text-white grid gap-6 place-items-center">
+    <div className="max-sm:w-11/12 sm:w-11/12 md:w-11/12 lg:w-7/12 grid gap-6 place-content-center my-10 text-white">
       {quotes.map((quote, index) => (
         <Card 
           key={index}
@@ -65,7 +63,7 @@ export const Container = ()=>{
       ))}
 
       {loading && (
-          <FaSpinner size={25} className="animate-spin text-[#E07B67]" />
+          <FaSpinner size={25} className="animate-spin text-[#E07B67]"/>
       )}
     </div>
   )
