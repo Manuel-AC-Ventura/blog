@@ -42,7 +42,7 @@ export const Container = ()=>{
     const remainingHeight = documentHeight - (windowHeight + scrollTop);
 
     if (remainingHeight < 400 && !loading) {
-      setLimit(prevLimit => prevLimit + 5); // Aumenta o limite em 5 ao chegar no final da página
+      setLimit(prevLimit => prevLimit + 5); 
     }
   };
 
